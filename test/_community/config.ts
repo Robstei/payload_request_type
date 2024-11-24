@@ -13,6 +13,15 @@ const dirname = path.dirname(filename)
 
 export default buildConfigWithDefaults({
   // ...extend config here
+  endpoints: [
+    {
+      path: '/trpc',
+      handler: (req: Request) => {
+        return Response.json('response')
+      },
+      method: 'get',
+    },
+  ],
   collections: [PostsCollection, MediaCollection],
   admin: {
     importMap: {
